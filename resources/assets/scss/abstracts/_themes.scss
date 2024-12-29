@@ -1,0 +1,89 @@
+@use "./primitives" as *;
+
+$light-theme: (
+    base: (
+        white: $clr-base-white,
+        black: $clr-base-black,
+        yellow: $clr-base-yellow,
+        desc: $clr-base-gray,
+        border: $clr-gray-300,
+        error: $clr-base-error,
+    ),
+    surface: (
+        25: $clr-base-white,
+        50: $clr-gray-100,
+        75: $clr-gray-300,
+    ),
+    gray: (
+        on: $clr-base-white,
+        main: $clr-gray-300,
+        light: $clr-gray-50,
+        dark: $clr-gray-800,
+        darker: $clr-gray-950,
+    ),
+    text: (
+        title: $clr-gray-950,
+        body: $clr-gray-900,
+        desc: $clr-gray-700,
+        label: $clr-gray-500,
+        body-invert: $clr-gray-200,
+        label-invert: $clr-gray-500,
+    ),
+    primary: (
+        on: $clr-base-white,
+        main: $clr-primary-700,
+        light: $clr-primary-75,
+        dark: $clr-primary-800,
+        darker: $clr-primary-900,
+    ),
+    // secondary: (
+    //   on: $clr-base-white,
+    //   main: $clr-secondary-500,
+    //   light: $clr-secondary-200,
+    //   dark: $clr-secondary-600,
+    //   darker: $clr-secondary-700,
+    // ),,,,,,,,,,,,,,,,,,,,,,,,,,
+);
+
+$dark-theme: (
+    base: (
+        white: $clr-base-white,
+        black: $clr-base-black,
+    ),
+    surface: (
+        25: $clr-gray-950,
+        50: $clr-gray-800,
+        75: $clr-gray-700,
+    ),
+    gray: (
+        on: $clr-base-white,
+        main: $clr-gray-800,
+        light: $clr-gray-950,
+        dark: $clr-gray-300,
+        darker: $clr-gray-100,
+    ),
+    text: (
+        title: $clr-base-white,
+        body: $clr-gray-200,
+        label: $clr-gray-400,
+    ),
+    primary: (
+        on: $clr-gray-900,
+        main: $clr-primary-200,
+        light: $clr-primary-700,
+        dark: $clr-primary-300,
+        darker: $clr-primary-200,
+    ),
+    // secondary: (
+    //   on: $clr-gray-900,
+    //   main: $clr-secondary-500,
+    //   light: $clr-secondary-700,
+    //   dark: $clr-secondary-300,
+    //   darker: $clr-secondary-200,
+    // ),,,,,,,,,,,,,,,,,,,,,,,,,,
+);
+
+$themes: (
+    light: $light-theme,
+    dark: $dark-theme,
+);

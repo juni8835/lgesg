@@ -1,0 +1,114 @@
+@use "./primitives" as *;
+@use "./functions" as *;
+
+$application: (
+    gutter: rem($app-gutter),
+    screen: (
+        min: $app-screen-min,
+        max: $app-screen-max,
+    ),
+    point: (
+        2xl: $app-breakpoint-2xl,
+        xl: $app-breakpoint-xl,
+        lg: $app-breakpoint-lg,
+        md: $app-breakpoint-md,
+        sm: $app-breakpoint-sm,
+    ),
+);
+
+$font-families: (
+    title: $family-title,
+    body: $family-body,
+);
+
+$font-weights: (
+    black: $weight-black,
+    extrabold: $weight-extrabold,
+    bold: $weight-bold,
+    semibold: $weight-semibold,
+    medium: $weight-medium,
+    regular: $weight-regular,
+    light: $weight-light,
+    extralight: $weight-extralight,
+    thin: $weight-thin,
+);
+
+$font-sizes: (
+    display: (
+        lg: fluid($spacing-32, $spacing-64),
+        // 128, 256
+        md: fluid($spacing-16, $spacing-32),
+        // 64, 128
+        sm: fluid($spacing-10, $spacing-20),
+        // 40, 80
+    ),
+    heading: (
+        xl: fluid($spacing-8, $spacing-16),
+        // 32, 64
+        lg: fluid($spacing-7, $spacing-12),
+        // 28, 48
+        md: fluid($spacing-6, $spacing-8),
+        // 24, 32
+        sm: fluid($spacing-5, $spacing-6),
+        // 20, 24
+    ),
+    body: (
+        xl: fluid($spacing-4-5, $spacing-5),
+        // 18,20
+        lg: fluid($spacing-4, $spacing-4-5),
+        // 16, 18
+        md: fluid($spacing-3-5, $spacing-4),
+        // 14, 16
+        sm: fluid($spacing-3, $spacing-3-5),
+        // 12, 14
+        xs: fluid($spacing-2-5, $spacing-3),
+        // 10, 12
+    ),
+);
+
+$paddings: (
+    xl: fluid($spacing-16, $spacing-32),
+    // 64, 128
+    lg: fluid($spacing-10, $spacing-20),
+    // 40, 80
+    md: fluid($spacing-6, $spacing-12),
+    // 24, 48
+    sm: fluid($spacing-4, $spacing-6),
+    // 16, 24
+    xs: fluid($spacing-2, $spacing-4),
+    // 8, 16
+    2xs: fluid($spacing-1, $spacing-2),
+    // 4, 8
+);
+
+$margins: (
+    xl: fluid($spacing-16, $spacing-32),
+    // 64, 128
+    lg: fluid($spacing-10, $spacing-20),
+    // 40, 80
+    md: fluid($spacing-6, $spacing-8),
+    // 24, 32
+    sm: fluid($spacing-4, $spacing-6),
+    // 16, 24
+    xs: fluid($spacing-2, $spacing-4),
+    // 8, 16
+);
+
+$radius: (
+    lg: fluid($spacing-3, $spacing-6),
+    // 12, 24
+    md: fluid($spacing-1-5, $spacing-3),
+    // 6, 12
+    sm: fluid($spacing-1, $spacing-1-5),
+    // 4, 6
+);
+
+$tokens: (
+    app: $application,
+    fm: $font-families,
+    fs: $font-sizes,
+    fw: $font-weights,
+    pd: $paddings,
+    mg: $margins,
+    rd: $radius,
+);

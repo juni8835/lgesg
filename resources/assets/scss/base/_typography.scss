@@ -1,0 +1,75 @@
+@use "../abstracts" as *;
+
+$typography: (
+    display: (
+        lg: (
+            fs: var(--fs-display-lg),
+            fw: var(--fw-semibold),
+            ls: -0.01rem,
+            lh: 1.05,
+        ),
+        md: (
+            fs: var(--fs-display-md),
+            fw: var(--fw-semibold),
+            ls: -0.01rem,
+            lh: 1.05,
+        ),
+        sm: (
+            fs: var(--fs-display-sm),
+            fw: var(--fw-semibold),
+            ls: -0.01rem,
+            lh: 1.05,
+        ),
+    ),
+    heading: (
+        xl: (
+            fs: var(--fs-heading-xl),
+            fw: var(--fw-semibold),
+            lh: 1.444,
+        ),
+        lg: (
+            fs: var(--fs-heading-lg),
+            fw: var(--fw-semibold),
+            lh: 1.444,
+        ),
+        md: (
+            fs: var(--fs-heading-md),
+            fw: var(--fw-semibold),
+            lh: 1.444,
+        ),
+        sm: (
+            fs: var(--fs-heading-sm),
+            fw: var(--fw-semibold),
+            lh: 1.333,
+        ),
+    ),
+    body: (
+        xl: (
+            fs: var(--fs-body-xl),
+            fw: var(--fw-regular),
+            lh: 1.48,
+        ),
+        lg: (
+            fs: var(--fs-body-lg),
+            fw: var(--fw-regular),
+            lh: 1.56,
+        ),
+        md: (
+            fs: var(--fs-body-md),
+            fw: var(--fw-regular),
+            lh: 1.618,
+        ),
+        sm: (
+            fs: var(--fs-body-sm),
+            fw: var(--fw-regular),
+            lh: 1.618,
+        ),
+        xs: (
+            fs: var(--fs-body-xs),
+            fw: var(--fw-regular),
+            lh: 1.618,
+        ),
+    ),
+);
+
+@include setupTypography($typography);

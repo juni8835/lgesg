@@ -1,0 +1,98 @@
+@use "sass:map";
+@use "../abstracts" as *;
+
+$root-variables: recursive($tokens);
+
+:root {
+    @include generateVars($root-variables);
+    @include generateVars(map.get($themes, $app-theme), "clr");
+    @include generateResponsiveVars($variables);
+}
+
+@include generateThemeVars($themes);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    font-size: 62.5%;
+}
+
+%body {
+    font-family: var(--fm-body);
+    font-size: var(--fs-body-lg);
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--clr-text-body);
+    word-break: keep-all;
+}
+
+body {
+    @extend %body;
+    background: var(--clr-surface-25);
+
+    &.--hidden {
+        overflow: hidden;
+    }
+}
+
+::selection {
+    background-color: var(--clr-primary-main);
+    color: var(--clr-primary-on);
+}
+
+a {
+    font-family: var(--fm-body);
+    text-decoration: none;
+    color: var(--clr-text-body);
+}
+
+button {
+    @extend %body;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+input,
+textarea,
+select,
+form,
+fieldset,
+legend {
+    @extend %body;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    &::after {
+        content: none;
+    }
+}
+
+main {
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+}
+
+main {
+    &.no-main-full {
+        min-height: 80vh;
+        @include flex-center();
+
+        > section {
+            width: 100%;
+        }
+    }
+}

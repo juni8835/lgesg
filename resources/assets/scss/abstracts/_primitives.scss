@@ -1,0 +1,96 @@
+// App ======================================
+$app-id: "no";
+$app-theme: "light";
+$app-screen-min: 375;
+$app-screen-max: 1920;
+
+$app-breakpoint-2xl: 1640;
+$app-breakpoint-xl: 1320;
+$app-breakpoint-lg: 1024;
+$app-breakpoint-md: 768;
+$app-breakpoint-sm: 544;
+
+$app-gutter: 24;
+
+// Families =================================
+$family-title: "Poppins", sans-serif;
+$family-body: "Pretendard", sans-serif;
+
+// Weights =================================
+$weight-black: 900;
+$weight-extrabold: 800;
+$weight-bold: 700;
+$weight-semibold: 600;
+$weight-medium: 500;
+$weight-regular: 400;
+$weight-light: 300;
+$weight-extralight: 200;
+$weight-thin: 100;
+
+// Colors =================================
+$clr-base-white: #fff;
+$clr-base-black: #000;
+$clr-base-yellow: #fffcef;
+$clr-base-surface: #f1f1f1;
+$clr-base-gray: #818181;
+$clr-base-error: #ff4444;
+
+$clr-primary-50: #fee5ee;
+$clr-primary-75: #ffdaeb;
+$clr-primary-100: #fcbcd5;
+$clr-primary-200: #fc90b9;
+$clr-primary-300: #fc629c;
+$clr-primary-400: #fa3b85;
+$clr-primary-500: #fa036e;
+$clr-primary-600: #e9016b;
+$clr-primary-700: #d20066;
+$clr-primary-800: #bd0062;
+$clr-primary-900: #98005b;
+
+// $clr-secondary-50: #c8fff4;
+// $clr-secondary-100: #70efde;
+// $clr-secondary-200: #03dac6;
+// $clr-secondary-300: #00c4b4;
+// $clr-secondary-400: #00b3a6;
+// $clr-secondary-500: #01a299;
+// $clr-secondary-600: #019592;
+// $clr-secondary-700: #018786;
+// $clr-secondary-800: #017374;
+// $clr-secondary-900: #005457;
+
+$clr-gray-50: #fafafa;
+$clr-gray-100: #f1f1f1;
+$clr-gray-200: #eeeeee;
+$clr-gray-300: #e0e0e0;
+$clr-gray-400: #bdbdbd;
+$clr-gray-500: #9e9e9e;
+$clr-gray-600: #757575;
+$clr-gray-700: #616161;
+$clr-gray-800: #424242;
+$clr-gray-900: #212121;
+$clr-gray-950: #1f1f1f;
+
+// Spacing =================================
+$spacing-1: 4;
+$spacing-1-5: 6;
+$spacing-2: 8;
+$spacing-2-5: 10;
+$spacing-3: 12;
+$spacing-3-5: 14;
+$spacing-4: 16;
+$spacing-4-5: 18;
+$spacing-5: 20;
+$spacing-6: 24;
+$spacing-7: 28;
+$spacing-8: 32;
+$spacing-9: 36;
+$spacing-10: 40;
+$spacing-12: 48;
+$spacing-14: 56;
+$spacing-16: 64;
+$spacing-18: 72;
+$spacing-20: 80;
+$spacing-24: 96;
+$spacing-32: 128;
+$spacing-48: 192;
+$spacing-64: 256;

@@ -1,0 +1,75 @@
+@use "../abstracts" as *;
+
+.--blind {
+    @include blind();
+}
+
+.--tac {
+    text-align: center;
+}
+.--tal {
+    text-align: left;
+}
+.--tar {
+    text-align: right;
+}
+
+.--flex-center {
+    @include flex-center();
+}
+
+.--flex-end {
+    @include flex-center();
+    justify-content: flex-end;
+}
+
+.--flex-between {
+    justify-content: space-between;
+}
+
+.no-link-active {
+    font-weight: 600;
+    color: var(--clr-primary-main);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.no-link {
+    font-weight: 600;
+    color: var(--clr-text-body);
+
+    &:hover {
+        color: var(--clr-primary-main);
+        text-decoration: underline;
+    }
+}
+
+.--fw-black {
+    font-weight: var(--fw-black);
+}
+.--fw-extrabold {
+    font-weight: var(--fw-extrabold);
+}
+.--fw-bold {
+    font-weight: var(--fw-bold);
+}
+.--fw-semibold {
+    font-weight: var(--fw-semibold);
+}
+.--fw-medium {
+    font-weight: var(--fw-medium);
+}
+.--fw-regular {
+    font-weight: var(--fw-regular);
+}
+.--fw-light {
+    font-weight: var(--fw-light);
+}
+.--fw-extralight {
+    font-weight: var(--fw-extralight);
+}
+.--fw-thin {
+    font-weight: var(--fw-thin);
+}

@@ -1,0 +1,125 @@
+@use "../abstracts" as *;
+
+%btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.8rem;
+    background-color: var(--clr-surface-50);
+    color: var(--clr-text-body);
+    transition: var(--tran-15);
+    min-width: 10rem;
+
+    &:hover {
+        background-color: var(--clr-surface-75);
+    }
+}
+
+.no-btn-wrap {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.no-btn-control {
+    @extend %btn;
+    width: fluid(44, 60);
+    height: fluid(44, 60);
+    border-radius: 50%;
+    margin: 0;
+    border: 1px solid transparent;
+    transition: var(--tran-15);
+    min-width: 0;
+}
+
+.no-btn {
+    @extend %btn;
+
+    &:hover {
+        background-color: var(--clr-surface-75);
+    }
+}
+
+.no-btn-size {
+    &--md {
+        font-size: var(--fs-body-lg);
+        padding: 1.2rem 2.4rem;
+    }
+
+    &--md {
+        font-size: var(--fs-body-md);
+    }
+    &--sm {
+        font-size: var(--fs-body-sm);
+        padding: 0.7rem 1.4rem;
+    }
+}
+
+.no-btn-more {
+    @extend %btn;
+    background-color: transparent;
+    color: var(--clr-text-desc);
+    padding-left: 0;
+    padding-right: 0;
+    text-transform: uppercase;
+    transition: var(--tran-15);
+
+    span {
+        line-height: 1;
+        transition: inherit;
+    }
+    i {
+        transition: inherit;
+    }
+
+    &:hover {
+        color: var(--clr-primary-main);
+        background-color: transparent;
+
+        i {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.no-btn-primary {
+    @extend %btn;
+    background-color: var(--clr-primary-main);
+    color: var(--clr-primary-on);
+
+    &:hover {
+        background-color: var(--clr-primary-dark);
+    }
+}
+
+.no-btn-white {
+    @extend %btn;
+    background-color: var(--clr-surface-25);
+
+    &:hover {
+        background-color: var(--clr-primary-light);
+    }
+}
+
+.no-btn-gray {
+    @extend %btn;
+    background-color: var(--clr-base-desc);
+    color: var(--clr-base-white);
+
+    &:hover {
+        background-color: var(--clr-gray-darker);
+    }
+}
+
+.no-btn-error-outline {
+    @extend %btn;
+    background: transparent;
+    border: 1px solid var(--clr-base-error);
+    color: var(--clr-base-error);
+
+    &:hover {
+        color: var(--clr-base-white);
+        background-color: var(--clr-base-error);
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "sass-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "php -S localhost:8001",
+    "sass": "sass --watch ./resources/scss/style.scss ./resources/css/style.css",
+    "sass-comp": "sass --watch --style compressed ./resources/scss/style.scss ./resources/css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

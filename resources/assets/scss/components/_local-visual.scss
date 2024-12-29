@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+.no-local-vis {
+    background-color: var(--clr-surface-50);
+    padding-top: var(--header-height);
+
+    &__inner {
+        padding: var(--pd-xl) 0 var(--pd-md);
+    }
+}

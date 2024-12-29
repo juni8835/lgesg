@@ -1,0 +1,248 @@
+@use "../abstracts" as *;
+
+// Visual =========================
+.no-main-vis {
+    --slide-height: #{fluid(493, 693)};
+
+    .no-main-vis-banner {
+        padding-top: var(--header-height);
+
+        .swiper-slide {
+            height: var(--slide-height);
+
+            figure {
+                @include pos-center();
+
+                img {
+                    object-fit: cover;
+                    @include pos-center();
+                }
+            }
+        }
+
+        .no-main-vis-content {
+            position: relative;
+            z-index: 1;
+            height: var(--slide-height);
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 66%;
+            gap: fluid(12, 24);
+
+            h2,
+            p {
+                visibility: hidden;
+                opacity: 0;
+                transform: translateY(25%);
+            }
+
+            @include mq(md) {
+                width: 89%;
+            }
+        }
+
+        .no-main-vis-control {
+            position: absolute;
+            left: 0;
+            bottom: var(--pd-lg);
+            width: 100%;
+
+            .no-main-vis-control-inner {
+                display: flex;
+                align-items: center;
+                gap: 2.4rem;
+                position: relative;
+                z-index: 1;
+            }
+
+            .swiper-pagination {
+                position: relative;
+                display: flex;
+                align-items: center;
+                z-index: 1;
+                gap: 2rem;
+                width: auto;
+                top: auto;
+                left: auto;
+                bottom: auto;
+
+                .swiper-pagination-bullet {
+                    background: none;
+                    color: var(--clr-text-label-invert);
+                    margin: 0;
+                    padding: 0;
+                    width: auto;
+                    height: auto;
+                    opacity: 1;
+                    border-radius: 0;
+
+                    &.swiper-pagination-bullet-active {
+                        color: var(--clr-base-white);
+                        border-bottom: 1px solid var(--clr-base-white);
+                    }
+                }
+            }
+
+            .no-main-vis-buttons {
+                display: flex;
+                align-items: center;
+
+                button {
+                    color: var(--clr-base-white);
+                    position: static;
+                    margin: 0;
+                    width: auto;
+                    height: auto;
+                    padding: 1rem;
+
+                    i {
+                        font-size: var(--fs-heading-sm);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// About =================================
+.no-main-about-item {
+    &__icon {
+        width: 16rem;
+        height: 16rem;
+        border-radius: 50%;
+        margin: 0 auto;
+        @include flex-center();
+        background-color: var(--clr-surface-50);
+    }
+
+    &__icon-inner {
+        width: 6rem;
+        height: 6rem;
+        @include flex-center();
+
+        lord-icon {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+// Esg =============================================
+
+.no-main-esg-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--app-gutter);
+}
+
+.no-main-esg-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--rd-lg);
+
+    &__img {
+        @include img-auto-cover(30.5%);
+
+        @include mq(md) {
+            @include img-auto-cover(56.25%);
+        }
+        @include mq(sm) {
+            padding-bottom: 29.3rem;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: var(--pd-md);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+// Notice ===================================
+.no-main-notice-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid var(--clr-text-body);
+
+    @include mq(lg) {
+        margin-top: var(--pd-lg);
+    }
+
+    .no-main-notice-item {
+        > a {
+            padding: var(--pd-md) 0;
+            border-bottom: 1px solid var(--clr-base-border);
+            transition: var(--tran-30);
+
+            &:hover * {
+                color: var(--clr-primary-main);
+            }
+        }
+
+        span {
+            color: var(--clr-base-desc);
+            font-weight: var(--fw-bold);
+            transition: inherit;
+        }
+
+        strong {
+            font-weight: var(--fw-bold);
+            transition: inherit;
+        }
+
+        i {
+            transition: inherit;
+        }
+    }
+}
+
+//  Archive =====================================
+.no-main-archive {
+    &__img {
+        @include img-auto-cover(56.25%);
+    }
+
+    &__link {
+        &:hover {
+            color: var(--clr-primary-main);
+        }
+    }
+}
+.no-main-archive-control {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--pd-lg);
+
+    @include mq(md) {
+        flex-direction: column;
+        gap: var(--pd-md);
+        padding-top: var(--pd-lg);
+    }
+
+    .no-main-archive-scrollbar {
+        position: relative;
+        max-width: 88rem;
+
+        .swiper-scrollbar-drag {
+            height: 0.3rem;
+        }
+    }
+
+    .no-btn-control {
+        position: static;
+    }
+}
+.no-main-archive-catg {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}

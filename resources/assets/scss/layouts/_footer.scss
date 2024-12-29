@@ -1,0 +1,81 @@
+@use "../abstracts" as *;
+
+.no-footer {
+    background-color: var(--clr-surface-50);
+
+    .no-footer-inner {
+        display: flex;
+        justify-content: space-between;
+
+        @include mq(md) {
+            flex-direction: column;
+        }
+
+        .no-footer-inner-top {
+            display: grid;
+            grid-template-columns: 3fr 9fr;
+            gap: 1.2rem 0 2.4rem;
+
+            @include mq(lg) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .no-footer-info {
+            @include mq(lg) {
+                padding: 2.4rem 0;
+            }
+
+            .no-footer-legal {
+                display: flex;
+                align-items: center;
+                gap: 1.6rem;
+            }
+
+            address {
+                margin-top: var(--pd-sm);
+                color: var(--clr-text-desc);
+                max-width: 70rem;
+
+                dl {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.4rem;
+                    padding-right: 0.8rem;
+                    margin-right: 0.8rem;
+                    position: relative;
+
+                    @include mq(md) {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        padding-right: 0;
+                        margin-right: 0;
+                        padding: 0.2rem 0;
+                    }
+
+                    &::after {
+                        content: "";
+                        width: 0.1rem;
+                        height: 1.2rem;
+                        background: var(--clr-text-label);
+                        top: 50%;
+                        right: -0.3rem;
+                        transform: translateY(-50%);
+                        position: absolute;
+
+                        @include mq(md) {
+                            content: none;
+                        }
+                    }
+                }
+            }
+
+            small {
+                display: block;
+                margin-top: var(--pd-md);
+            }
+        }
+    }
+}

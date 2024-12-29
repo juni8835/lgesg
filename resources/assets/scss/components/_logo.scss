@@ -1,0 +1,29 @@
+@use "../abstracts" as *;
+
+.no-logo {
+    a {
+        max-width: 9rem;
+        @include flex-center();
+
+        @include mq(md) {
+            max-width: 7rem;
+        }
+
+        img {
+        }
+    }
+}
+
+.no-flogo {
+    a {
+        max-width: 14rem;
+        @include flex-center();
+
+        @include mq(md) {
+            max-width: 10rem;
+        }
+
+        img {
+        }
+    }
+}

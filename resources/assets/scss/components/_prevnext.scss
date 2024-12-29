@@ -1,0 +1,38 @@
+@use "../abstracts" as *;
+
+.no-prevnext {
+    border-top: 1px solid var(--clr-gray-dark);
+
+    .no-prevnext-link {
+        padding: 2.4rem;
+        border-bottom: 1px solid var(--clr-gray-main);
+
+        @include mq(md) {
+            padding: 1.2rem;
+        }
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            gap: 4.8rem;
+            @include mq(md) {
+                gap: 2.4rem;
+            }
+
+            &:hover {
+                span {
+                    color: var(--clr-primary-main);
+                    text-decoration: underline;
+                }
+            }
+
+            strong {
+                color: var(--clr-text-desc);
+            }
+            span {
+                flex: 1;
+                @include line-clamp(1);
+            }
+        }
+    }
+}

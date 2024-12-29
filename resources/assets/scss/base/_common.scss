@@ -1,0 +1,192 @@
+@use "sass:map";
+@use "sass:math";
+@use "../abstracts" as *;
+
+$color-styles: recursive(map.get($themes, $app-theme));
+$padding-styles: recursive($paddings);
+$margin-styles: recursive($margins);
+
+@each $key, $val in $color-styles {
+    $attr-value: var(--clr-#{$key});
+
+    .#{$app-id}-clr-#{$key} {
+        color: $attr-value;
+    }
+    .#{$app-id}-bg-#{$key} {
+        background: $attr-value;
+    }
+}
+
+@each $key, $val in $padding-styles {
+    $id: "#{$app-id}-pd-#{$key}";
+    $attr-value: var(--pd-#{$key});
+
+    .#{$id} {
+        padding: $attr-value;
+    }
+    .#{$id}--x {
+        padding: 0 $attr-value;
+    }
+    .#{$id}--y {
+        padding: $attr-value 0;
+    }
+    .#{$id}--r {
+        padding-right: $attr-value;
+    }
+    .#{$id}--l {
+        padding-left: $attr-value;
+    }
+    .#{$id}--t {
+        padding-top: $attr-value;
+    }
+    .#{$id}--b {
+        padding-bottom: $attr-value;
+    }
+
+    @each $name, $size in $breakpoints {
+        $mq-id: "#{$app-id}-#{$name}__pd-#{$key}";
+
+        @include mq($name) {
+            .#{$mq-id} {
+                padding: $attr-value;
+            }
+            .#{$mq-id}--x {
+                padding: 0 $attr-value;
+            }
+            .#{$mq-id}--y {
+                padding: $attr-value 0;
+            }
+            .#{$mq-id}--r {
+                padding-right: $attr-value;
+            }
+            .#{$mq-id}--l {
+                padding-left: $attr-value;
+            }
+            .#{$mq-id}--t {
+                padding-top: $attr-value;
+            }
+            .#{$mq-id}--b {
+                padding-bottom: $attr-value;
+            }
+        }
+    }
+}
+
+@each $key, $val in $margin-styles {
+    $id: "#{$app-id}-mg-#{$key}";
+    $attr-value: var(--mg-#{$key});
+
+    .#{$id} {
+        margin: $attr-value;
+    }
+    .#{$id}--x {
+        margin: 0 $attr-value;
+    }
+    .#{$id}--y {
+        margin: $attr-value 0;
+    }
+    .#{$id}--r {
+        margin-right: $attr-value;
+    }
+    .#{$id}--l {
+        margin-left: $attr-value;
+    }
+    .#{$id}--t {
+        margin-top: $attr-value;
+    }
+    .#{$id}--b {
+        margin-bottom: $attr-value;
+    }
+
+    @each $name, $size in $breakpoints {
+        $mq-id: "#{$app-id}-#{$name}__mg-#{$key}";
+
+        @include mq($name) {
+            .#{$mq-id} {
+                margin: $attr-value;
+            }
+            .#{$mq-id}--x {
+                margin: 0 $attr-value;
+            }
+            .#{$mq-id}--y {
+                margin: $attr-value 0;
+            }
+            .#{$mq-id}--r {
+                margin-right: $attr-value;
+            }
+            .#{$mq-id}--l {
+                margin-left: $attr-value;
+            }
+            .#{$mq-id}--t {
+                margin-top: $attr-value;
+            }
+            .#{$mq-id}--b {
+                margin-bottom: $attr-value;
+            }
+        }
+    }
+}
+
+@each $key, $value in $breakpoints {
+    $id: "#{$app-id}-container-#{$key}";
+
+    .#{$id} {
+        max-width: #{$value}px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: var(--app-gutter);
+        padding-right: var(--app-gutter);
+    }
+}
+
+.#{$app-id}-row {
+    $gutter: calc(var(--app-gutter) / 2);
+    $gap: calc(var(--app-gutter) * 1);
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -#{$gutter};
+    margin-right: -#{$gutter};
+
+    @for $i from 1 through 12 {
+        $width: calc($i / 12) * 100%;
+
+        & > .#{$app-id}-col-#{$i} {
+            width: $width;
+            padding-left: #{$gutter};
+            padding-right: #{$gutter};
+        }
+
+        @each $key, $value in $breakpoints {
+            & > .#{$app-id}-col-#{$key}-#{$i} {
+                @include mq($key) {
+                    width: $width;
+                    padding-left: #{$gutter};
+                    padding-right: #{$gutter};
+                }
+            }
+        }
+    }
+
+    &.#{$app-id}-row-gap {
+        margin-top: -#{$gap};
+        margin-bottom: -#{$gap};
+
+        @for $i from 1 through 12 {
+            & > .#{$app-id}-col-#{$i} {
+                padding-top: #{$gap};
+                padding-bottom: #{$gap};
+            }
+
+            @each $key, $value in $breakpoints {
+                & > .#{$app-id}-col-#{$key}-#{$i} {
+                    @include mq($key) {
+                        padding-top: #{$gap};
+                        padding-bottom: #{$gap};
+                    }
+                }
+            }
+        }
+    }
+}
